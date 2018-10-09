@@ -1,16 +1,16 @@
 build: wast
 
 clean:
-	rm signupeoseos.wast
-	rm signupeoseos.wasm
+	rm signupabank.wast
+	rm signupabank.wasm
 
 abi:
-	eosiocpp -g signupeoseos.abi signupeoseos.hpp
+	arisencpp -g signupabank.abi signupabank.hpp
 
 wast:
-	eosiocpp -o signupeoseos.wast signupeoseos.cpp
+	arisencpp -o signupabank.wast signupabank.cpp
 
 deploy:
-	cleos set contract signupeoseos ../signupeoseos -p signupeoseos
+	cleos set contract signupabank ../signupabank -p signupabank
 
 build_and_deploy: build deploy
